@@ -8,14 +8,14 @@ const Login = () => {
   return (
     <Box>
       <Container>
-        <h2>로그인</h2> <br />
+        <h2 style={{ color: "#004dcf" }}>로그인</h2> <br />
         <div>
-          ID{" "}
+          <p style={{ color: "#004dcf" }} >ID</p>
           <input
             type="text"
             style={{
-              margin: "10px 0px 10px 5px",
-              padding: "2px",
+              margin: "0px 0px 10px 5px",
+              padding: "3px",
               display: "block",
               width: "250px",
               height: "25px",
@@ -23,12 +23,12 @@ const Login = () => {
               borderRadius: "3px",
             }}
           />
-          PW{" "}
+          <p style={{ color: "#004dcf" }} >PW</p>
           <input
             type="password"
             style={{
               margin: "10px 0px 10px 5px",
-              padding: "2px",
+              padding: "3px",
               display: "block",
               width: "250px",
               height: "25px",
@@ -61,7 +61,7 @@ const Login = () => {
 const Box = styled.div`
   width: 100%;
   height: 800px;
-  display: flex; // flex는 부모 div에 해줘야 중앙 정렬됨!
+  display: flex; 
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -70,8 +70,8 @@ const Box = styled.div`
 const Container = styled.div`
   border: 1px solid lightgray;
   width: 400px;
-  height: 400px;
-  display: flex; // 이 flex는 자기한테 먹이는 것!
+  height: 420px;
+  display: flex; 
   flex-direction: column;
   justify-content: center;
   align-items: center;
