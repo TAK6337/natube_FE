@@ -8,7 +8,7 @@ const Signup = () => {
   return (
     <Box>
       <Container>
-        <h2>회원가입</h2> <br />
+        <h2 style={{ color: "#004dcf" }} >회원가입</h2> <br />
         <div>
           <div style={{ display: "flex", flexDirection: "row" }}>
             <input
@@ -16,7 +16,7 @@ const Signup = () => {
               placeholder="닉네임을 입력해주세요."
               style={{
                 margin: "10px 5px 10px 5px",
-                padding: "2px",
+                padding: "3px",
                 display: "block",
                 width: "200px",
                 height: "25px",
@@ -32,7 +32,7 @@ const Signup = () => {
             placeholder="ID를 입력해주세요."
             style={{
               margin: "10px 5px 10px 5px",
-              padding: "2px",
+              padding: "3px",
               display: "block",
               width: "200px",
               height: "25px",
@@ -47,7 +47,7 @@ const Signup = () => {
             placeholder="PW를 입력해주세요."
             style={{
               margin: "10px 0px 20px 5px",
-              padding: "2px",
+              padding: "3px",
               display: "block",
               width: "200px",
               height: "25px",
@@ -60,7 +60,7 @@ const Signup = () => {
             placeholder="PW를 다시 입력해주세요."
             style={{
               margin: "10px 0px 10px 5px",
-              padding: "2px",
+              padding: "3px",
               display: "block",
               width: "200px",
               height: "25px",
@@ -86,7 +86,7 @@ const Signup = () => {
 const Box = styled.div`
   width: 100%;
   height: 800px;
-  display: flex; // flex는 부모 div에 해줘야 중앙 정렬됨!
+  display: flex; 
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ const Container = styled.div`
   border: 1px solid lightgray;
   width: 400px;
   height: 450px;
-  display: flex; // 이 flex는 자기한테 먹이는 것!
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;

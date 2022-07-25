@@ -37,7 +37,7 @@ const Intro = (props) => {
 
           <div
             style={{
-              width: "250px",
+              width: "280px",
               marginLeft: "auto"
             }}
           >
@@ -45,6 +45,7 @@ const Intro = (props) => {
               onClick={() => {
                 navigate("/user/login");
               }}
+              style={{ marginRight: "5px" }}
             >              
               로그인
             </Button>
