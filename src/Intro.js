@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 const Intro = (props) => {
   const navigate = useNavigate();
 
-
   return (
     <>
       <div
@@ -46,7 +45,7 @@ const Intro = (props) => {
               onClick={() => {
                 navigate("/user/login");
               }}
-            >
+            >              
               로그인
             </Button>
             <Button
