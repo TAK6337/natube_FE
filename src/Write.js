@@ -15,89 +15,99 @@ const Write = () => {
           style={{
             width: "6vw",
             height: "6vh",
-            margin: "10px 0px 0px 20px"
+            margin: "10px 0px 0px 20px",
           }}
-          onClick={() => {navigate("/api/search");}}
+          onClick={() => {
+            navigate("/api/search");
+          }}
         />
       </div>
       <Box>
         <Container>
-          <h2>작성하기</h2> <br />
-          <div>
-            <div style={{ display: "flex", flexDirection: "row" }}>
-              제목
+          <h2 style={{ color: "#004dcf" }}>작성하기</h2> <br />
+          <div
+            style={{
+              width: "350px",
+              height: "400px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <p style={{ color: "#004dcf", fontWeight: "bold" }}>제목</p>
               <input
                 type="text"
                 placeholder="제목을 입력해주세요."
                 style={{
-                  margin: "10px 5px 10px 5px",
-                  padding: "2px",
-                  display: "block",
-                  width: "200px",
+                  margin: "10px 5px 10px 10px",
+                  padding: "5px",
+                  width: "240px",
                   height: "25px",
                   border: "1px solid #d9d9d9",
-                  borderRadius: "3px",
+                  borderRadius: "3px"
                 }}
               />
             </div>
-            <div 
-                style={{
-                  border: "1px solid #f1f3f4",
-                  height: "30px",
-                  margin: "auto 0",
-                  borderRadius: "3px",
-                  display: "flex", 
-                  flexDirection: "row"
-                }}
-              >
-                사진첨부
-              </div>
-            <div >
+            <div
+              style={{
+                height: "40px",
+                borderRadius: "3px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <p style={{ color: "#004dcf", fontWeight: "bold" }}>사진첨부</p>
               <input
+                type="file"
                 placeholder="사진첨부"
                 style={{
-                  margin: "10px 5px 10px 5px",
-                  padding: "2px",
-                  display: "block",
+                  margin: "10px 5px 10px 10px",
+                  padding: "5px",
                   width: "200px",
                   height: "25px",
-                  border: "1px solid #d9d9d9",
-                  borderRadius: "3px",
+                  borderRadius: "3px",                  
                 }}
               />
-              
             </div>
             <input
-              placeholder="URL"
+              placeholder="영상 URL"
               style={{
                 margin: "10px 0px 20px 5px",
-                padding: "2px",
-                display: "block",
-                width: "200px",
+                padding: "5px",
+                width: "290px",
                 height: "25px",
                 border: "1px solid #d9d9d9",
                 borderRadius: "3px",
               }}
             />
-            <input
+            <textarea
               placeholder="내용을 입력해주세요."
               style={{
                 margin: "10px 0px 20px 5px",
-                padding: "2px",
-                display: "block",
-                width: "200px",
+                padding: "5px",
+                width: "290px",
                 height: "100px",
                 border: "1px solid #d9d9d9",
                 borderRadius: "3px",
+                resize: "none",
+                fontSize: "15px",
               }}
             />
             <input
               placeholder="# 해시태그"
               style={{
                 margin: "10px 0px 10px 5px",
-                padding: "2px",
-                display: "block",
-                width: "200px",
+                padding: "5px",
+                width: "290px",
                 height: "25px",
                 border: "1px solid #d9d9d9",
                 borderRadius: "3px",
@@ -107,7 +117,7 @@ const Write = () => {
           <div>
             <Button
               onClick={() => {
-                navigate("/user/login");
+                navigate("/api/post/:postId");
               }}
             >
               작성하기
@@ -122,17 +132,16 @@ const Write = () => {
 const Box = styled.div`
   width: 100%;
   height: 800px;
-  display: flex; // flex는 부모 div에 해줘야 중앙 정렬됨!
-  flex-direction: row;
+  display: flex;
   justify-content: center;
   align-items: center;
 `;
 
 const Container = styled.div`
   border: 1px solid lightgray;
-  width: 600px;
-  height: 600px;
-  display: flex; // 이 flex는 자기한테 먹이는 것!
+  width: 450px;
+  height: 650px;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
