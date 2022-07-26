@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-const Write = () => {
+const Update = () => {
   const navigate = useNavigate();
 
   return (
@@ -24,7 +24,7 @@ const Write = () => {
       </div>
       <Box>
         <Container>
-          <h2 style={{ color: "#004dcf" }}>작성하기</h2> <br />
+          <h2 style={{ color: "#004dcf" }}>수정하기</h2> <br />
           <div
             style={{
               width: "350px",
@@ -45,7 +45,6 @@ const Write = () => {
               <p style={{ color: "#004dcf", fontWeight: "bold" }}>제목</p>
               <input
                 type="text"
-                placeholder="제목을 입력해주세요."
                 style={{
                   margin: "10px 5px 10px 10px",
                   padding: "5px",
@@ -68,7 +67,6 @@ const Write = () => {
               <p style={{ color: "#004dcf", fontWeight: "bold" }}>사진첨부</p>
               <input
                 type="file"
-                placeholder="사진첨부"
                 style={{
                   margin: "10px 5px 10px 10px",
                   padding: "5px",
@@ -79,7 +77,6 @@ const Write = () => {
               />
             </div>
             <input
-              placeholder="영상 URL"
               style={{
                 margin: "10px 0px 20px 5px",
                 padding: "5px",
@@ -90,7 +87,6 @@ const Write = () => {
               }}
             />
             <textarea
-              placeholder="내용을 입력해주세요."
               style={{
                 margin: "10px 0px 20px 5px",
                 padding: "5px",
@@ -103,7 +99,6 @@ const Write = () => {
               }}
             />
             <input
-              placeholder="# 해시태그"
               style={{
                 margin: "10px 0px 10px 5px",
                 padding: "5px",
@@ -120,7 +115,7 @@ const Write = () => {
                 navigate("/detail");
               }}
             >
-              작성하기
+              수정하기
             </Button>
           </div>
         </Container>
@@ -165,4 +160,4 @@ const Button = styled.button`
   margin-top: 20px;
 `;
 
-export default Write;
+export default Update;

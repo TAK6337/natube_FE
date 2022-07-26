@@ -1,5 +1,4 @@
-import React from 'react'
-// import { Button } from '@mui/material';
+import React from 'react';
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -33,7 +32,6 @@ const Search = (onChange, onClick) => {
         }}>로그아웃
         </Button>
       </div>
-
       <div
         className="App"
         style={{
@@ -52,8 +50,6 @@ const Search = (onChange, onClick) => {
             flexDirection: "column",
           }}
         >
-
-
           <img className="natubeImage" alt="natube" src="image/나투브.png"
             style={{
               width: "30vw",
@@ -87,6 +83,7 @@ const Search = (onChange, onClick) => {
 
 <Box>
   <Container>
+
           
 
   </Container>
