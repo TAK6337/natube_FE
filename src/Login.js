@@ -40,14 +40,14 @@ const Login = () => {
         <div>
           <Button
             onClick={() => {
-              navigate("/api/search/:keyword");
+              navigate("/search");
             }}
           >
             로그인
           </Button>
           <Button
             onClick={() => {
-              navigate("/user/signup");
+              navigate("/signup");
             }}
           >
             회원가입
