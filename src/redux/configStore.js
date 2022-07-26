@@ -1,7 +1,7 @@
-import { createStore, combineReducers, applyMiddleware, compose} from "redux";
-import Names from "./modules/Name";
+import {legacy_createStore as createStore, combineReducers} from "redux";
+import natube from "./modules/natube";
 
-const rootReducer = combineReducers({Names});
+const rootReducer = combineReducers({ natube });
 
 const store = createStore(rootReducer);
 

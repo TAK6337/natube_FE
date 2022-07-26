@@ -1,33 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
-
-const Write = (props) => {
-
-  const title = React.useRef(null);
-  const imageUrl = React.useRef(null);
-  const ytUrl = React.useRef(null);
-  const content = React.useRef(null);
-  const hashTag = React.useRef(null);
-
+const Update = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const postId = () => {
-
-    console.log(
-      title.current.value,
-      imageUrl.current.value,
-      ytUrl.current.value,
-      content.current.value,
-      hashTag.current.value);
-
-    
-  };
-
-
 
   return (
     <>
@@ -48,7 +24,7 @@ const Write = (props) => {
       </div>
       <Box>
         <Container>
-          <h2 style={{ color: "#004dcf" }}>작성하기</h2> <br />
+          <h2 style={{ color: "#004dcf" }}>수정하기</h2> <br />
           <div
             style={{
               width: "350px",
@@ -69,8 +45,6 @@ const Write = (props) => {
               <p style={{ color: "#004dcf", fontWeight: "bold" }}>제목</p>
               <input
                 type="text"
-                ref={title}
-                placeholder="제목을 입력해주세요."
                 style={{
                   margin: "10px 5px 10px 10px",
                   padding: "5px",
@@ -93,8 +67,6 @@ const Write = (props) => {
               <p style={{ color: "#004dcf", fontWeight: "bold" }}>사진첨부</p>
               <input
                 type="file"
-                ref={imageUrl}
-                placeholder="사진첨부"
                 style={{
                   margin: "10px 5px 10px 10px",
                   padding: "5px",
@@ -105,8 +77,6 @@ const Write = (props) => {
               />
             </div>
             <input
-              placeholder="영상 URL"
-              ref={ytUrl}
               style={{
                 margin: "10px 0px 20px 5px",
                 padding: "5px",
@@ -117,8 +87,6 @@ const Write = (props) => {
               }}
             />
             <textarea
-              ref={content}
-              placeholder="내용을 입력해주세요."
               style={{
                 margin: "10px 0px 20px 5px",
                 padding: "5px",
@@ -131,8 +99,6 @@ const Write = (props) => {
               }}
             />
             <input
-              ref={hashTag}
-              placeholder="# 해시태그"
               style={{
                 margin: "10px 0px 10px 5px",
                 padding: "5px",
@@ -145,12 +111,11 @@ const Write = (props) => {
           </div>
           <div>
             <Button
-
               onClick={() => {
                 navigate("/detail");
               }}
             >
-              작성하기
+              수정하기
             </Button>
           </div>
         </Container>
@@ -195,4 +160,4 @@ const Button = styled.button`
   margin-top: 20px;
 `;
 
-export default Write;
+export default Update;

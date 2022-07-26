@@ -42,6 +42,8 @@ const Detail = () => {
       </div>
       <Box>
         <Container>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ fontSize: "14px", padding: "10px" }}>닉네임</div>
           <div
             style={{
               width: "300px",
@@ -55,6 +57,7 @@ const Detail = () => {
           >
             URL
           </div>
+          </div>
           <div>
           <div style={{ width: "390px", display: "flex", justifyContent: "space-around", alignItems: "center" }}>
             <p style={{ fontSize: "18px", display: "inline-block" }}>제목</p>
@@ -62,7 +65,7 @@ const Detail = () => {
             <p style={{ fontSize: "12px", display: "inline-block" }}>#해시태그 키워드2 </p>
           </div>
           <div style={{ width: "390px", display: "flex", padding: "10px"}}>내용</div>
-          <div style={{ width: "390px", height: "170px", fontSize: "15px", padding: "10px" }}>내용 보여주기</div>
+          <div style={{ width: "390px", height: "190px", fontSize: "15px", padding: "10px" }}>내용 보여주기</div>
           </div>
         </Container>
       </Box>
@@ -72,7 +75,7 @@ const Detail = () => {
 
 const Box = styled.div`
   width: 100%;
-  height: 350px;
+  height: 400px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,8 +83,8 @@ const Box = styled.div`
 
 const Container = styled.div`
   border: 1px solid lightgray;
-  width: 700px;
-  height: 300px;
+  width: 750px;
+  height: 330px;
   display: flex;
   justify-content: center;
   border-radius: 10px;

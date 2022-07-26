@@ -5,6 +5,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Write from "./Write";
 import Detail from "./Detail";
+import Update from "./Update";
 import { useNavigate, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/write" element={<Write />} />
       <Route path="/detail" element={<Detail />} />
+      <Route path="/update" element={<Update />} />
     </Routes>
   );
 }

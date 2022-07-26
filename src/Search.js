@@ -1,5 +1,4 @@
-import React from 'react'
-// import { Button } from '@mui/material';
+import React from 'react';
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -43,7 +42,6 @@ const Search = () => {
         }}>로그아웃
         </Button>
       </div>
-
       <div
         className="App"
         style={{
@@ -63,8 +61,8 @@ const Search = () => {
           }}
         >
 
+          <img className="natubeImage" alt="natube" src="image/나투브.png"
 
-          <img className="natubeImage" alt="natube" src="/image/나투브.png"
             style={{
               width: "30vw",
               height: "30vh",
@@ -97,6 +95,7 @@ const Search = () => {
 
 {/* <Box>
   <Container>
+<<<<<<< HEAD
           <div style={{
                             height: "130px",        
                             width: "270px",
@@ -108,6 +107,10 @@ const Search = () => {
                             border: "2px solid #1a237e"
           }}>사진
           </div>
+=======
+
+          
+>>>>>>> master
 
           <div style={{
               height: "3px",
