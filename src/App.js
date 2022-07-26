@@ -5,6 +5,7 @@ import Login from "./Login";
 import Signup from "./Signup";
 import Write from "./Write";
 import Detail from "./Detail";
+import Update from "./Update";
 import { useNavigate, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -13,11 +14,12 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Intro />} />
-      <Route path="/Search" element={<Search />} />
-      <Route path="/user/signup" element={<Signup />} />
-      <Route path="/user/login" element={<Login />} />
-      <Route path="/api/post" element={<Write />} />
-      <Route path="/api/post/:postId" element={<Detail />} />
+      <Route path="/search" element={<Search />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/write" element={<Write />} />
+      <Route path="/detail" element={<Detail />} />
+      <Route path="/update" element={<Update />} />
     </Routes>
   );
 }

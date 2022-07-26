@@ -1,5 +1,4 @@
-import React from 'react'
-// import { Button } from '@mui/material';
+import React from 'react';
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -38,11 +37,11 @@ const Search = (onChange) => {
        }}
 >
        <Button onClick={() => {
-  navigate("/Login");
+  navigate("/write");
 }}>글쓰기</Button>
 
 <Button onClick={() => {
-  navigate("/Signup")
+  navigate("/login")
 }}>로그아웃
 </Button>
 </div>
@@ -67,7 +66,7 @@ const Search = (onChange) => {
         >
 
       {/* <Button variant="contained">Contained</Button> */}
-      <img className="natubeImage" alt="natube" src="image/나투브.png"
+      <img className="natubeImage" alt="natube" src="/image/나투브.png"
         style={{
           width: "30vw",
           height: "30vh",

@@ -28,7 +28,7 @@ const Intro = (props) => {
           <img
             className="natubeImage"
             alt="natube"
-            src="image/나투브.png"
+            src="/image/나투브.png"
             style={{
               width: "30vw",
               height: "30vh",
@@ -43,7 +43,7 @@ const Intro = (props) => {
           >
             <Button
               onClick={() => {
-                navigate("/user/login");
+                navigate("/login");
               }}
               style={{ marginRight: "5px" }}
             >              
@@ -51,7 +51,7 @@ const Intro = (props) => {
             </Button>
             <Button
               onClick={() => {
-                navigate("/user/signup");
+                navigate("/signup");
               }}
             >
               회원가입
