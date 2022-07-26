@@ -72,7 +72,7 @@ const Signup = () => {
         <div>
           <Button
             onClick={() => {
-              navigate("/user/login");
+              navigate("/login");
             }}
           >
             회원가입

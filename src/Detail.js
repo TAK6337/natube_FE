@@ -18,7 +18,7 @@ const Detail = () => {
             margin: "10px 0px 0px 20px",
           }}
           onClick={() => {
-            navigate("/api/search");
+            navigate("/search");
           }}
         />
       </div>
@@ -26,14 +26,14 @@ const Detail = () => {
         <div style={{ display: "flex", justifyContent: "flex-end", marginRight: "25vw" }}>
           <Button
             onClick={() => {
-              navigate("/api/post/:postId");
+              navigate("/update");
             }}
           >
             수정하기
           </Button>
           <Button
             onClick={() => {
-              navigate("/api/post/:postId?delete?");
+              navigate("/search");
             }}
           >
             삭제하기

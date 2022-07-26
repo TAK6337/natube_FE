@@ -13,11 +13,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Intro />} />
-      <Route path="/Search" element={<Search />} />
-      <Route path="/user/signup" element={<Signup />} />
-      <Route path="/user/login" element={<Login />} />
-      <Route path="/api/post" element={<Write />} />
-      <Route path="/api/post/:postId" element={<Detail />} />
+      <Route path="/search" element={<Search />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/write" element={<Write />} />
+      <Route path="/detail" element={<Detail />} />
     </Routes>
   );
 }

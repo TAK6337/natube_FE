@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-const Write = () => {
+
+const Write = (props) => {
+
+  const title = React.useRef(null);
+  const imageUrl = React.useRef(null);
+  const ytUrl = React.useRef(null);
+  const content = React.useRef(null);
+  const hashTag = React.useRef(null);
+
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const postId = () => {
+
+    console.log(
+      title.current.value,
+      imageUrl.current.value,
+      ytUrl.current.value,
+      content.current.value,
+      hashTag.current.value);
+
+    
+  };
+
+
 
   return (
     <>
@@ -18,7 +42,7 @@ const Write = () => {
             margin: "10px 0px 0px 20px",
           }}
           onClick={() => {
-            navigate("/api/search");
+            navigate("/search");
           }}
         />
       </div>
@@ -45,6 +69,7 @@ const Write = () => {
               <p style={{ color: "#004dcf", fontWeight: "bold" }}>제목</p>
               <input
                 type="text"
+                ref={title}
                 placeholder="제목을 입력해주세요."
                 style={{
                   margin: "10px 5px 10px 10px",
@@ -68,6 +93,7 @@ const Write = () => {
               <p style={{ color: "#004dcf", fontWeight: "bold" }}>사진첨부</p>
               <input
                 type="file"
+                ref={imageUrl}
                 placeholder="사진첨부"
                 style={{
                   margin: "10px 5px 10px 10px",
@@ -80,6 +106,7 @@ const Write = () => {
             </div>
             <input
               placeholder="영상 URL"
+              ref={ytUrl}
               style={{
                 margin: "10px 0px 20px 5px",
                 padding: "5px",
@@ -90,6 +117,7 @@ const Write = () => {
               }}
             />
             <textarea
+              ref={content}
               placeholder="내용을 입력해주세요."
               style={{
                 margin: "10px 0px 20px 5px",
@@ -103,6 +131,7 @@ const Write = () => {
               }}
             />
             <input
+              ref={hashTag}
               placeholder="# 해시태그"
               style={{
                 margin: "10px 0px 10px 5px",
@@ -116,9 +145,7 @@ const Write = () => {
           </div>
           <div>
             <Button
-              onClick={() => {
-                navigate("/api/post/:postId");
-              }}
+              onClick={postId}
             >
               작성하기
             </Button>
