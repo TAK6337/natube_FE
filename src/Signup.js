@@ -1,28 +1,42 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const username = React.useRef(null);
   const nickname = React.useRef(null);
   const password = React.useRef(null);
   const passwordCheck = React.useRef(null);
 
-  const dispatch = useDispatch();
-
   const signUp = () => {
-    console.log(
-      username.current.value,
-      nickname.current.value,
-      password.current.value,
-      passwordCheck.current.value
-    );
+    axios.post("http://13.209.65.84:8080/user/signup", 
+    { username: username.current.value,
+      nickname: nickname.current.value,
+      password: password.current.value,
+      passwordCheck: passwordCheck.current.value}
+    ).then((response) => {
+      console.log(response)
+      window.alert("회원가입에 성공했습니다!")
+      navigate("/login")
+      //if로 성공 or 실패 핸들링 
+    }).catch(error => {
+      console.log(error.response.data.message)
+      if(error.response.data.status == 400) {window.alert(error.response.data.message)}
 
-    navigate("/login");
+    })
+  
+
+
+    // navigate("/login");
   };
+
+  const names = useSelector((state) => state.Name.list);
+  console.log(names);
 
 
   return (
@@ -113,8 +127,7 @@ const Signup = () => {
         </div>
         <div>
 
-          <Button onClick={signUp}>회원가입</Button>
-
+          <Button onClick={signUp} >회원가입</Button>
         </div>
       </Container>
     </Box>

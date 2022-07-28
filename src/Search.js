@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {onChange, onClick} from 'react'
+import axios from "axios";
 
 
 
@@ -13,13 +14,21 @@ const Search = () => {
 
   const keyword = React.useRef(null);
 
-  const names = useSelector((state) => state.Names.list);
-  console.log(names);
+  // const names = useSelector((state) => state.Names.list);
+  // console.log(names);
 
 
   // const logout = () => {
     
   // };
+
+  const postID = () => {
+    axios.get("http://13.209.65.84:8080/api/search", 
+    ).then(response => {
+      console.log(response)
+      //if로 성공 or 실패 핸들링 
+    });
+  }
 
   return (
     <>
@@ -93,9 +102,8 @@ const Search = () => {
             cursor: "pointer"
           }}>검색</button>
 
-{/* <Box>
+<Box>
   <Container>
-<<<<<<< HEAD
           <div style={{
                             height: "130px",        
                             width: "270px",
@@ -107,10 +115,7 @@ const Search = () => {
                             border: "2px solid #1a237e"
           }}>사진
           </div>
-=======
 
-          
->>>>>>> master
 
           <div style={{
               height: "3px",
@@ -124,9 +129,9 @@ const Search = () => {
             <p>닉네임</p>
           </div>
   </Container>
-</Box> */}
+</Box>
 
-<Cardstyle>
+{/* <Cardstyle>
   {names.map((list, index) => {
     return (
       <div key={index} id={list.id}>
@@ -155,7 +160,7 @@ const Search = () => {
     )
   }
   )}
-</Cardstyle>
+</Cardstyle> */}
 
     </>
 
@@ -178,7 +183,7 @@ margin: 5px;
 
 `;
 
-const Ha = styled.div`
+const Box = styled.div`
   width: 50%;
   height: 500px;
   display: flex; 
@@ -187,7 +192,7 @@ const Ha = styled.div`
   align-items: center;
 `;
 
-const Cardstyle = styled.div`
+const Container = styled.div`
   border: 1px solid lightgray;
   width: 300px;
   height: 300px;

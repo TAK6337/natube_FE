@@ -1,9 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
+  
+  const username = React.useRef(null);
+  const password = React.useRef(null);
+
+
+  const logIn = () => {
+    axios.post("http://13.209.65.84:8080/user/login", 
+    { username: username.current.value,
+      password: password.current.value}
+    ).then((response) => {
+      console.log(response)
+      window.alert("로그인에 성공했습니다!")  
+      navigate("/search")
+      //if로 성공 or 실패 핸들링 
+    }).catch(error => {
+      console.log(error.response.data.message)
+      if(error.response.data.status == 400) {window.alert(error.response.data.message)}
+
+    })
+  }
 
   return (
     <Box>
@@ -13,6 +34,7 @@ const Login = () => {
           <p style={{ color: "#004dcf" }} >ID</p>
           <input
             type="text"
+            ref={username}
             style={{
               margin: "0px 0px 10px 5px",
               padding: "3px",
@@ -26,6 +48,7 @@ const Login = () => {
           <p style={{ color: "#004dcf" }} >PW</p>
           <input
             type="password"
+            ref={password}
             style={{
               margin: "10px 0px 10px 5px",
               padding: "3px",
@@ -38,13 +61,8 @@ const Login = () => {
           />
         </div>
         <div>
-          <Button
-            onClick={() => {
-              navigate("/search");
-            }}
-          >
-            로그인
-          </Button>
+
+          <Button onClick={logIn}>로그인</Button>
           <Button
             onClick={() => {
               navigate("/signup");

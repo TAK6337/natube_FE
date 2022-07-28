@@ -21,6 +21,7 @@ function App() {
       <Route path="/detail" element={<Detail />} />
       <Route path="/update" element={<Update />} />
     </Routes>
+
   );
 }
 

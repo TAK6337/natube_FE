@@ -2,12 +2,12 @@ import React, { useRef } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import axios from "axios";
 
 
 const Write = (props) => {
 
   const title = React.useRef(null);
-  const imageUrl = React.useRef(null);
   const ytUrl = React.useRef(null);
   const content = React.useRef(null);
   const hashTag = React.useRef(null);
@@ -16,18 +16,18 @@ const Write = (props) => {
   const dispatch = useDispatch();
 
   const postId = () => {
-
-    console.log(
-      title.current.value,
-      imageUrl.current.value,
-      ytUrl.current.value,
-      content.current.value,
-      hashTag.current.value);
-
-    
-  };
-
-
+    axios.post("http://13.209.65.84:8080/api/post", 
+    { title: title.current.value,
+      ytUrl: ytUrl.current.value,
+      content: content.current.value,
+      hashTag: hashTag.current.value,}
+    ).then(response => {
+      console.log(response)
+      window.alert("작성 완료!")
+      navigate("/detail")
+      //if로 성공 or 실패 핸들링 
+    });
+  }
 
   return (
     <>
@@ -81,7 +81,7 @@ const Write = (props) => {
                 }}
               />
             </div>
-            <div
+            {/* <div
               style={{
                 height: "40px",
                 borderRadius: "3px",
@@ -103,7 +103,7 @@ const Write = (props) => {
                   borderRadius: "3px",                  
                 }}
               />
-            </div>
+            </div> */}
             <input
               placeholder="영상 URL"
               ref={ytUrl}
@@ -146,9 +146,7 @@ const Write = (props) => {
           <div>
             <Button
 
-              onClick={() => {
-                navigate("/detail");
-              }}
+              onClick={postId}
             >
               작성하기
             </Button>
