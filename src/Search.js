@@ -93,9 +93,8 @@ const Search = () => {
             cursor: "pointer"
           }}>검색</button>
 
-{/* <Box>
+<Box>
   <Container>
-<<<<<<< HEAD
           <div style={{
                             height: "130px",        
                             width: "270px",
@@ -107,10 +106,7 @@ const Search = () => {
                             border: "2px solid #1a237e"
           }}>사진
           </div>
-=======
 
-          
->>>>>>> master
 
           <div style={{
               height: "3px",
@@ -124,9 +120,9 @@ const Search = () => {
             <p>닉네임</p>
           </div>
   </Container>
-</Box> */}
+</Box>
 
-<Cardstyle>
+{/* <Cardstyle>
   {names.map((list, index) => {
     return (
       <div key={index} id={list.id}>
@@ -155,7 +151,7 @@ const Search = () => {
     )
   }
   )}
-</Cardstyle>
+</Cardstyle> */}
 
     </>
 
@@ -178,7 +174,7 @@ margin: 5px;
 
 `;
 
-const Ha = styled.div`
+const Container = styled.div`
   width: 50%;
   height: 500px;
   display: flex; 
@@ -187,7 +183,7 @@ const Ha = styled.div`
   align-items: center;
 `;
 
-const Cardstyle = styled.div`
+const Box = styled.div`
   border: 1px solid lightgray;
   width: 300px;
   height: 300px;
