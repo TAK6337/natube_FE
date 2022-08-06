@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import {onChange, onClick} from 'react'
+import axios from "axios";
 
 
 
@@ -13,13 +14,21 @@ const Search = () => {
 
   const keyword = React.useRef(null);
 
-  const names = useSelector((state) => state.Names.list);
-  console.log(names);
+  // const names = useSelector((state) => state.Names.list);
+  // console.log(names);
 
 
   // const logout = () => {
     
   // };
+
+  const postID = () => {
+    axios.get("http://13.209.65.84:8080/api/search", 
+    ).then(response => {
+      console.log(response)
+      //if로 성공 or 실패 핸들링 
+    });
+  }
 
   return (
     <>
@@ -174,7 +183,11 @@ margin: 5px;
 
 `;
 
-const Container = styled.div`
+
+const Box = styled.div`
+
+
+
   width: 50%;
   height: 500px;
   display: flex; 
@@ -183,7 +196,10 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Box = styled.div`
+
+const Container = styled.div`
+
+>>>>>>> tak
   border: 1px solid lightgray;
   width: 300px;
   height: 300px;
